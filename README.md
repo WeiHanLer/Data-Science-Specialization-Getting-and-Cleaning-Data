@@ -1,6 +1,6 @@
 # Getting and Cleaning Data
-Getting and Cleaning Data Project
-The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. This repository contains the R script and documentation for the Coursera Data Science Track course Getting & Cleaning Data.
+
+The **purpose** of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. This repository contains the R script and documentation for the Coursera Data Science Track course Getting & Cleaning Data.
 
 A full description is available at the site where the data was obtained:
 (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
@@ -15,8 +15,8 @@ R script, 'run_analysis.R' is created to do the following:
 4. Appropriately labels the data set with descriptive activity names.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-'CodeBook.md' contains information on the variables, data set, transformations and work that was done to tidy up the data
+**'CodeBook.md'** contains information on the variables, data set, transformations and work that was done to tidy up the data
 
-'run_analysis.R' is the code for the R script used to get and clean the data.
+**'run_analysis.R'** is the code for the R script used to get and clean the data.
 
-'FinalTidyData.txt' is the output from the 'runAnalysis.R' R script
+**'FinalTidyData.txt'** is the output from the 'runAnalysis.R' R script
