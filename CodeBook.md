@@ -8,34 +8,15 @@ The features selected for this database come from the accelerometer and gyroscop
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
 
-The raw source data files can be found here: Data
 
-Citation: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+## Data Set Variables
+### Generated fields
 
-Transformations carried out
-Once the raw data sets were downloaded and loaded into tables, the following transformations were carried out in order to generate the tidy data set.
-
-1 - The training and test data sets were merged into one data set (source files = X_train and X_test). 2 - The activity reference tables for the training and test data sets were merged into a single table (source files = y_train and y_test).
-
-3 - The subject reference tables for the training and test data sets were merged into a single table (source files = subject_train and subject_test).
-
-4 - Descriptive labels detailing the measurement type were added to the column variables in the merged data set using the features file. The measurements are now clearly labelled in the datset rather than the orginial 'V_' descriptors used.
-
-5 - The activity and subject reference tables created in transformations 2 and 3 were used to add an activty ID and subject ID to each row of the merged data set. The measurements were now linked to one of the 6 activities and one of the 30 subjects.
-
-6 - Only measurements relating to mean and standard deviation calculations were extracted from the merged data set. These were identified where the measurement name had either mean() or std() contained in the description. The remaining columns were excluded.
-
-7 - The activty IDs were replaced with the appropriate descriptors e.g. WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
-
-8 -A 'wide' tidy data set was created where there is a single row for each activty and subject combination and a single column for each selected measurement average (mean) value. The data set is ordered by subject in ascending order.
-
-Data Set Variables
-Generated fields
 SubjectID (integer) - ID of subject performing the activity. Ranges from 1-30 (integer)
 
 Activity (factor)- Activity the subject is performing. 6 possible values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
 
-Measurement variables
+### Measurement variables
 Each variable is the mean value of all measurements recorded for that variable for each subject and activity. The values are bounded between -1 and 1.
 
 tBodyAcc-mean()-X (num)
