@@ -1,4 +1,4 @@
-# Week 4 Cleaning and Getting Data Assignment
+# Getting and cleaning data assignment
 
 library(dplyr)
 # Download the file and unzip files into working directory 
@@ -12,12 +12,12 @@ features <- read.table("./UCI HAR Dataset/features.txt")
 activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
 colnames(activity) <- c("ActivityID", "Activity")
 
-#  Read in the training set data and associated reference files
+#  Read in the training set,activity labels and subject reference files
 Training_set <- read.table("./UCI HAR Dataset/train/X_train.txt")
 Training_ActivityLabels<- read.table("./UCI HAR Dataset/train/y_train.txt")
 Training_subjects <- read.table ("./UCI HAR Dataset/train/subject_train.txt")
 
-#  Read in the test set data and associated reference files
+#  Read in the test set,activity labels and subject reference files
 Test_set <- read.table("./UCI HAR Dataset/test/X_test.txt")
 Test_Activitylabels <- read.table("./UCI HAR Dataset/test/y_test.txt")
 Test_subjects <- read.table ("./UCI HAR Dataset/test/subject_test.txt")
@@ -35,11 +35,11 @@ colnames(MergeActivity) <- "ActivityID"
 colnames(MergeSubjects) <- "SubjectID"
 
 # Add in columns to the merged data set so appropriate activity IDs and subject IDs are assigned to each row.
-Merged_set_wlabels <- cbind(MergeSubjects, MergeActivity, MergeData)
+Mergedwithlabels <- cbind(MergeSubjects, MergeActivity, MergeData)
 
 # Extract only the measurements relating to mean and standard deviation from the merged dataset.
-SelectedColumns <- grepl("*mean\\(\\)|*std\\(\\)|ActivityID|SubjectID", names(Merged_set_wlabels))
-SelectedData <- Merged_set_wlabels[ , SelectedColumns]
+SelectedColumns <- grepl("*mean\\(\\)|*std\\(\\)|ActivityID|SubjectID", names(Mergedwithlabels))
+SelectedData <- Mergedwithlabels[ , SelectedColumns]
 
 # Replace the actvity IDs with the descriptive names for the activity.
 LabelledData <- merge(SelectedData, activity, by="ActivityID") 
