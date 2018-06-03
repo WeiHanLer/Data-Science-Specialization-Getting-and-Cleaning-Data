@@ -19,4 +19,4 @@ R script, 'run_analysis.R' is created to do the following:
 
 **'run_analysis.R'** is the code for the R script used to get and clean the data.
 
-**'FinalTidyData.txt'** is the output from the 'runAnalysis.R' R script
+**'TidyData.txt'** is the output from the 'runAnalysis.R' R script
