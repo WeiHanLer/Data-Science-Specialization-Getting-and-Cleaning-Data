@@ -1,13 +1,13 @@
 # Getting and cleaning data assignment
 
 library(dplyr)
-# Download the file and unzip files into working directory 
+# Download and unzip files into working directory 
 
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url, destfile = "./datacleaningweek4.zip")
 unzip("./datacleaningweek4.zip")
 
-# Read in the features and activity labels information into seperate vectors to be used later in the script
+# Read in the features and activity labels 
 features <- read.table("./UCI HAR Dataset/features.txt")
 activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
 colnames(activity) <- c("ActivityID", "Activity")
@@ -29,7 +29,7 @@ MergeData <- rbind(Training_set, Test_set)
 MergeActivity <- rbind(Training_ActivityLabels, Test_Activitylabels)
 MergeSubjects <- rbind(Training_subjects, Test_subjects)
 
-# Add in appropriate descriptive labels to the column variables in the merged dataset using the created 'features' vector.  Add in descriptive column labels to the activity and subject tables.
+# Rename the column variables in the merged dataset with the 'features' vector and give appropriate names to the columns in merged activity and subject dataset.   
 colnames(MergeData) <- features[,2]
 colnames(MergeActivity) <- "ActivityID"
 colnames(MergeSubjects) <- "SubjectID"
