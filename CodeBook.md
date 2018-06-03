@@ -1,5 +1,5 @@
 # Code Book
-This is the code book for the TidyData set created when the run_analysis_R script is run. 
+This code book describes the variables used in the R script 'run_analysis.R'
 
 ## Data source
 The source data for the project is the 'Human Activity Recognition Using Smartphones Data Set which was built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors. Each person (subject) performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity measurements at a constant rate of 50Hz were captured.
