@@ -1,5 +1,6 @@
 # Getting and cleaning data assignment
 
+# Load 'dplyr' package
 library(dplyr)
 # Download and unzip files into working directory 
 
@@ -12,30 +13,30 @@ features <- read.table("./UCI HAR Dataset/features.txt")
 activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
 colnames(activity) <- c("ActivityID", "Activity")
 
-#  Read in the training set,activity labels and subject reference files
-Training_set <- read.table("./UCI HAR Dataset/train/X_train.txt")
-Training_ActivityLabels<- read.table("./UCI HAR Dataset/train/y_train.txt")
-Training_subjects <- read.table ("./UCI HAR Dataset/train/subject_train.txt")
+# Read in the training set,activity labels and subject reference files
+X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+y_train<- read.table("./UCI HAR Dataset/train/y_train.txt")
+subject_train <- read.table ("./UCI HAR Dataset/train/subject_train.txt")
 
 #  Read in the test set,activity labels and subject reference files
-Test_set <- read.table("./UCI HAR Dataset/test/X_test.txt")
-Test_Activitylabels <- read.table("./UCI HAR Dataset/test/y_test.txt")
-Test_subjects <- read.table ("./UCI HAR Dataset/test/subject_test.txt")
+X_test<- read.table("./UCI HAR Dataset/test/X_test.txt")
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+subject_test <- read.table ("./UCI HAR Dataset/test/subject_test.txt")
 
 # Merge the training and test data sets into one dataset.
-MergeData <- rbind(Training_set, Test_set)
+Merged <- rbind(X_train, X_test)
 
 # Merge the activity and subject reference tables for the training and test sets into single reference tables.
-MergeActivity <- rbind(Training_ActivityLabels, Test_Activitylabels)
-MergeSubjects <- rbind(Training_subjects, Test_subjects)
+MergeActivity <- rbind(y_train, y_test)
+MergeSubjects <- rbind(subject_train, subject_test)
 
 # Rename the column variables in the merged dataset with the 'features' vector and give appropriate names to the columns in merged activity and subject dataset.   
-colnames(MergeData) <- features[,2]
+colnames(Merged) <- features[,2]
 colnames(MergeActivity) <- "ActivityID"
 colnames(MergeSubjects) <- "SubjectID"
 
 # Add in columns to the merged data set so appropriate activity IDs and subject IDs are assigned to each row.
-Mergedwithlabels <- cbind(MergeSubjects, MergeActivity, MergeData)
+Mergedwithlabels <- cbind(MergeSubjects, MergeActivity, Merged)
 
 # Extract only the measurements relating to mean and standard deviation from the merged dataset.
 SelectedColumns <- grepl("*mean\\(\\)|*std\\(\\)|ActivityID|SubjectID", names(Mergedwithlabels))
