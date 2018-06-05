@@ -9,6 +9,17 @@ The features selected for this database come from the accelerometer and gyroscop
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
 
 
+Original files obtained from source:
+'README.txt'
+'features_info.txt': Information of features labels.
+'features.txt': List of the features.
+'activity_labels.txt': Matches the activity names to their labels.
+'train/X_train.txt': Training set.
+'train/y_train.txt': Training labels.
+'test/X_test.txt': Test set.
+'test/y_test.txt': Test labels.
+
+
 ## Data Set Variables
 ### Generated fields
 
