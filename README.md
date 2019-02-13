@@ -1,4 +1,4 @@
-# Getting and Cleaning Data
+# Course-3-Getting-and-Cleaning-Data-Data-Science-Specialization
 
 The **purpose** of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. This repository contains the R script and documentation for the Coursera Data Science Track course Getting & Cleaning Data.
 
